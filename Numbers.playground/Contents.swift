@@ -60,3 +60,20 @@ if d1 + 0.1 == 1.2 {
 
 let ticketCount = 1_000
 let ticketNumbers = 1 ..< ticketCount
+
+/*
+Chapter 4 - Bronze Challenge p. 89
+Set down your computer and grab a pencil and paper for this challenge.
+What is the binary representation of -1 using an 8-bit signed integer? If you took that
+same bit pattern and interpreted it as an 8-bit unsigned integer, what would the value be?
+*/
+
+// representation of -1 using an 8-bit signed integer:
+// 0    0    0    0    0    0    1     0
+// 2^7  2^6  2^5  2^4  2^3  2^2  -2^1  2^0
+// 00000010
+
+// interpretation of -1 using an Unsgined 8-bit integer:
+// 0    0    0    0    0    0    1    0
+// 2^7  2^6  2^5  2^4  2^3  2^2  2^1  2^0
+// 00000010
