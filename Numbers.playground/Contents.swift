@@ -17,3 +17,16 @@ let numberOfChapters = 3
 
 let numberOfPeople: UInt = 40
 let volumeAdjustment: Int32 = -1000
+
+10 + 20
+30 - 5
+5 * 6
+
+10 + 2 * 5
+30 - 5 - 5
+(10 + 2) * 5
+30 - (5 - 5)
+
+11 / 3
+11 % 3
+-11 % 3
