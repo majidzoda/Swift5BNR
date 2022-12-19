@@ -34,3 +34,6 @@ let volumeAdjustment: Int32 = -1000
 var x = 10
 x += 10
 x -= 5
+
+let y: Int8 = 120
+let z = y &+ 10
