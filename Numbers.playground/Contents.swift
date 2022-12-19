@@ -57,3 +57,6 @@ print("d1 + 0.1 is \(d1 + 0.1)")
 if d1 + 0.1 == 1.2 {
     print("d1 + 0.1 is equal to 1.2")
 }
+
+let ticketCount = 1_000
+let ticketNumbers = 1 ..< ticketCount
