@@ -30,3 +30,7 @@ let volumeAdjustment: Int32 = -1000
 11 / 3
 11 % 3
 -11 % 3
+
+var x = 10
+x += 10
+x -= 5
