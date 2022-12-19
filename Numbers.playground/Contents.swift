@@ -37,3 +37,7 @@ x -= 5
 
 let y: Int8 = 120
 let z = y &+ 10
+
+let a: Int16 = 200
+let b: Int8 = 50
+let c = a + Int16(b)
