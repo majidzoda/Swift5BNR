@@ -7,9 +7,9 @@ switch statusCode {
 case 401:
     errorString += "Unauthorized"
 case 400...417:
-    errorString += "Client error, 4xx."
+    errorString += "Client error, \(statusCode)."
 case 500...505:
-    errorString += "Server error, 5xx."
+    errorString += "Server error, \(statusCode)."
 default:
-    errorString += "Unknown status. Please review the request and try again."
+    errorString = "\(statusCode) is not a know error."
 }
