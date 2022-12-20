@@ -108,3 +108,15 @@ case (0, _):
 default:
     print("Case not covered.")
 }
+
+
+/*
+Chapter5-Switch-Silver Challenge p.109
+You can add more conditions to the if-case by supplying a comma-separated list. For example, you could check
+whether the person is: a) in the cool demographic, b) old enough to rent a car in the United States, and c)
+not in their thirties. Add another condition to Listing 5.13 to check whether age meets all three criteria.
+*/
+
+if case 18...35 = age, age >= 25, age < 30 {
+    print("Cool dempographic and can rent a car and they are not in their 30s.")
+}
