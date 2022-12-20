@@ -34,3 +34,19 @@ case (_, 404):
 default:
     print("Neither code is 404.")
 }
+
+let age = 25
+//switch age {
+//case 18...35:
+//    print("Cool demographic")
+//default:
+//    break
+//}
+
+//if case 18...35 = age {
+//    print("Cool demographic")
+//}
+
+if case 18...35 = age, age >= 25 {
+    print("Cool dempographic and can rent a car")
+}
