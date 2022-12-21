@@ -22,3 +22,11 @@ let b = (aAcute == aAcutePrecomposed)
 
 aAcute.count
 aAcutePrecomposed.count
+
+let start = playground.startIndex
+let end = playground.index(start, offsetBy: 4)
+let fifthCharacter = playground[end]
+
+let range = ...end
+let firstFive = playground[range]
+
