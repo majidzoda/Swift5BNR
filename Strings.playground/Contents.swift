@@ -19,3 +19,6 @@ for scalar in playground.unicodeScalars {
 let aAcutePrecomposed = "\u{00E1}"
 
 let b = (aAcute == aAcutePrecomposed)
+
+aAcute.count
+aAcutePrecomposed.count
