@@ -18,3 +18,13 @@ bucketList[0] = "Climb Mt. Kilimanjaro"
 bucketList
 bucketList.insert("Toboggan across Alasaka", at: 1)
 bucketList
+
+var newItems = ["Bike across America",
+                "Make a perfect souffle",
+                "Solve Fermat's enigma"]
+
+//for item in newItems {
+//    bucketList.append(item)
+//}
+bucketList += newItems
+print(bucketList)
