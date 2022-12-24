@@ -37,3 +37,12 @@ if let theError = errorCodeString, let errorCodeInt = Int(theError), errorCodeIn
 var upCaseErrorDescription = errorDescription?.uppercased()
 upCaseErrorDescription?.append(" PLEASE TRY AGAIN.")
 upCaseErrorDescription
+
+//let description: String
+//if let errorDescription = errorDescription {
+//    description = errorDescription
+//} else {
+//    description = "No error."
+//}
+errorDescription = nilgi
+let description = errorDescription ?? "No error."
