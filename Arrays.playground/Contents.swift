@@ -44,3 +44,14 @@ let lunches = [
                 "Black Bean Burrito",
                 "Falafel Wrap"
 ]
+
+/*
+Chapter8: Arrays - Bronze Challenge p. 165
+Look at the array below. var toDoList = ["Take out the trash", "Pay bills", "Cross off finished items"]
+Use the documentation to find a property defined on the Array type that will tell you whether toDoList
+contains any elements.
+ */
+
+var toDoList = ["Take out the trash", "Pay bills", "Cross off finished items"]
+toDoList.isEmpty
+//toDoList.count == 0
