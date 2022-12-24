@@ -76,4 +76,25 @@ var optionalNil: String?
 // print(optionalNil!)
 // __lldb_expr_265/Optionals.playground:76: Fatal error: Unexpectedly found nil while unwrapping an Optional value
 
+/*
+Chapter9: Optionals Gold Challenge p. 187
+Open your playground from Chapter 8, Arrays.playground. Consult the documentation to find a method on Array that will
+locate the index of "Go on an Arctic expedition" in your bucketList. This method will return an Index?. Unwrap that value
+and use it to compute the index that is two positions later in the array. Last, use this new index to find the String at
+that position within your bucketList. Look at the documentation for the String and Array types. What other properties and
+methods work with optionals? Why?
+*/
+
+var chapter8ArrayBucketList = ["Climb Mt. Everest",
+                               "Read War and Peace",
+                               "Go on a arctic expedition",
+                               "Scuba dive in the Great Blue Hole",
+                               "Find a triple rainbow"
+]
+
+var arcticExpeditionIndex = chapter8ArrayBucketList.firstIndex(of: "Go on a arctic expedition")
+
+if let index = arcticExpeditionIndex {
+    print(chapter8ArrayBucketList[index+2])
+}
 
