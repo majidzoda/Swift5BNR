@@ -65,3 +65,15 @@ var middleName: String?
 var kidsName: [String]?
 
 
+/*
+Chapter9: Optionals - Silver Challenge p. 186
+Earlier in the chapter we told you that accessing an optional’s value when it is nil will result in a runtime error. Make
+this mistake by force-unwrapping an optional when it is nil. Next, examine the error and understand what the error is
+telling you.
+*/
+
+var optionalNil: String?
+// print(optionalNil!)
+// __lldb_expr_265/Optionals.playground:76: Fatal error: Unexpectedly found nil while unwrapping an Optional value
+
+
