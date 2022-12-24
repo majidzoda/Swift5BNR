@@ -36,3 +36,11 @@ var anotherList = ["Bike across America",
 ]
 
 newItems == anotherList
+
+let lunches = [
+                "Cheeseburger",
+                "Veggie Pizza",
+                "Chicken Caesar Salar",
+                "Black Bean Burrito",
+                "Falafel Wrap"
+]
