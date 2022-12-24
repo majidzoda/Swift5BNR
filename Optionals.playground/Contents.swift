@@ -5,6 +5,7 @@ import UIKit
 
 var errorCodeString: String?
 errorCodeString = "404"
+var errorDescription: String?
 
 //if errorCodeString != nil {
 //    let theError = errorCodeString!
@@ -30,5 +31,7 @@ errorCodeString = "404"
 //}
 
 if let theError = errorCodeString, let errorCodeInt = Int(theError), errorCodeInt == 404 {
-    print("\(theError): \(errorCodeInt)")
+    errorDescription = "\(errorCodeInt + 200): resource not found."
 }
+
+var upCaseErrorDescription = errorDescription?.uppercased()
