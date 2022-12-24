@@ -21,10 +21,18 @@ bucketList
 
 var newItems = ["Bike across America",
                 "Make a perfect souffle",
-                "Solve Fermat's enigma"]
+                "Solve Fermat's enigma"
+]
 
 //for item in newItems {
 //    bucketList.append(item)
 //}
 bucketList += newItems
 print(bucketList)
+
+var anotherList = ["Bike across America",
+                   "Make a perfect souffle",
+                   "Solve Fermat's enigma"
+]
+
+newItems == anotherList
