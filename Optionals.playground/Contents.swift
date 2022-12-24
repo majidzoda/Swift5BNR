@@ -14,7 +14,7 @@ var errorDescription: String?
 
 //if let theError = errorCodeString {
 //    print(theError)
-//}
+//}g
 
 
 
@@ -35,3 +35,5 @@ if let theError = errorCodeString, let errorCodeInt = Int(theError), errorCodeIn
 }
 
 var upCaseErrorDescription = errorDescription?.uppercased()
+upCaseErrorDescription?.append(" PLEASE TRY AGAIN.")
+upCaseErrorDescription
