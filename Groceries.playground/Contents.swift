@@ -14,3 +14,5 @@ let hasBananas = groceryList.contains("Bananas")
 
 let friendsGroceryList = Set(["Bananas", "Cereal", "Milk", "Oranges"])
 let sharedList = groceryList.union(friendsGroceryList)
+
+let duplicateItems = groceryList.intersection(friendsGroceryList)
