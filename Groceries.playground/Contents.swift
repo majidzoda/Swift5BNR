@@ -18,3 +18,11 @@ let sharedList = groceryList.union(friendsGroceryList)
 let duplicateItems = groceryList.intersection(friendsGroceryList)
 
 let disjoint = groceryList.isDisjoint(with: friendsGroceryList)
+
+let players = ["Anna", "Vijay", "Jenka"]
+let winners = ["Jenka", "Jenka", "Vijay", "Jenka"]
+
+let playerSet = Set(players)
+let winnerSet = Set(winners)
+playerSet.subtracting(winnerSet)
+
