@@ -42,3 +42,14 @@ let myCities: Set = ["Atlanta", "Chicago", "Jacksonville", "New York", "Denver"]
 let yourCities: Set = ["Chicago", "Denver", "Jacksonville"]
 myCities.isSuperset(of: yourCities)
 
+/*
+Chapter11: Sets - Silver Challenge p. 217
+In this chapter, you used methods like union(_:) and intersection(_:) to create new sets.
+Sometimes you may prefer to modify an existing instance instead of creating a new one. Look
+through the Set documentation and rework the examples in the chapter for union(_:) and
+intersection(_:) using methods that mutate the set directly.
+*/
+
+groceryList.formUnion(friendsGroceryList)
+groceryList.formIntersection(friendsGroceryList)
+groceryList
