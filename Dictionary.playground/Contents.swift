@@ -43,17 +43,20 @@ single long line.)
         "McKenzie", "Thaisa", "Shea", "Jen"]
 */
 
-var sportsLeague: Dictionary<String,[String]> = ["Alpha" : ["Jane",
+var sportsLeague: Dictionary<String,[String]> = ["Sky Blue FC members" :
+                                                            ["Jane",
                                                             "Michaela",
                                                             "Rachel",
                                                             "Allysha",
                                                             "Janine"],
-                                                 "Betta" : ["Sydney",
+                                                 "Orlando Pride members" :
+                                                            ["Sydney",
                                                             "Toni",
                                                             "Shelina",
                                                             "Emily",
                                                             "Chioma"],
-                                                 "Gamma" : ["Kailen",
+                                                 "Houston Dash members" :
+                                                            ["Kailen",
                                                             "McKenzie",
                                                             "Thaisa",
                                                             "Shea",
@@ -67,3 +70,43 @@ for values in sportsLeague.values{
 
 print(" The NWSL has the following players: \(printArray)")
 
+
+/*
+Chapter10: Dictionaries - Gold Challenge p. 201
+Combine your knowledge of dictionaries with some of the previous lessons in this book. Output the members each
+team with formatting that looks like this:
+    Sky Blue FC members:
+    Kailen
+    McKenzie
+    Thaisa
+    Shea
+    Jen
+
+    Orlando Pride members:
+    Sydney
+    Toni
+    Shelina
+    Emily
+    Chioma
+
+    Houston Dash members:
+    Jane
+    Michaela
+    Rachel
+    Allysha
+    Janine
+ 
+Each team’s members should appear one per line, with no other punctuation. There should be an additional new
+line between teams. For added difficulty, make your solution work using only one print() statement (inside a
+loop is fine). Writing extremely concise code in this way often harms your ability to read the code later, but
+it can be be fun and satisfying to flex your understanding in a playground environment like this.
+
+Some hints: Search the documentation for how to represent special characters in String literals. (For example,
+how do you add a tab or new line in a string?) Also, look at the documentation for the print() function. There
+are different ways you can call the function to control its output. Lastly, look at the documentation for the
+Array type. What are the different ways you can make a single string from an array’s elements?
+*/
+
+for (league, players) in sportsLeague {
+    print("\t\(league):\n\t\(players.joined(separator: "\n\t"))\n")
+}
