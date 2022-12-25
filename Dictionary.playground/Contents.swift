@@ -15,4 +15,10 @@ if let lastRating = oldRating, let currentRating = moveiRatings["Tron"] {
 moveiRatings["Hackers"] = 5
 //moveiRatings.removeValue(forKey: "Sneakers")
 moveiRatings["Sneakers"] = nil
-g
+
+for (key, value) in moveiRatings {
+    print("The movie \(key) was rated \(value).")
+}
+for movi in moveiRatings.keys {
+    print("User has rated \(movi).")
+}
