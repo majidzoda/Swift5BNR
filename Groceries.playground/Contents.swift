@@ -26,3 +26,19 @@ let playerSet = Set(players)
 let winnerSet = Set(winners)
 playerSet.subtracting(winnerSet)
 
+/*
+Chapter11: Sets - Bronze Challenge p. 216
+Consider the following code that models the cities two people have visited as sets.
+
+let myCities: Set = ["Atlanta", "Chicago", "Jacksonville", "New York", "Denver"]
+let yourCities: Set = ["Chicago", "Denver", "Jacksonville"]
+ 
+Find a method on Set that returns a Bool indicating whether myCities contains all the
+cities contained by yourCities. (Hint: This relationship would make myCities a superset of
+yourCities.)
+*/
+
+let myCities: Set = ["Atlanta", "Chicago", "Jacksonville", "New York", "Denver"]
+let yourCities: Set = ["Chicago", "Denver", "Jacksonville"]
+myCities.isSuperset(of: yourCities)
+
