@@ -10,3 +10,4 @@ for food in groceryList {
 }
 
 groceryList.remove("Pears")
+let hasBananas = groceryList.contains("Bananas")
