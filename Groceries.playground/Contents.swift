@@ -16,3 +16,5 @@ let friendsGroceryList = Set(["Bananas", "Cereal", "Milk", "Oranges"])
 let sharedList = groceryList.union(friendsGroceryList)
 
 let duplicateItems = groceryList.intersection(friendsGroceryList)
+
+let disjoint = groceryList.isDisjoint(with: friendsGroceryList)
