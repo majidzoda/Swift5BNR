@@ -11,3 +11,6 @@ for food in groceryList {
 
 groceryList.remove("Pears")
 let hasBananas = groceryList.contains("Bananas")
+
+let friendsGroceryList = Set(["Bananas", "Cereal", "Milk", "Oranges"])
+let sharedList = groceryList.union(friendsGroceryList)
