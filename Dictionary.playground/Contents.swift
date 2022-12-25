@@ -22,3 +22,5 @@ for (key, value) in moveiRatings {
 for movi in moveiRatings.keys {
     print("User has rated \(movi).")
 }
+
+let watchedMOvies = Array(moveiRatings.keys)
