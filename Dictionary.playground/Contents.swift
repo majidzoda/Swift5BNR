@@ -11,3 +11,8 @@ if let lastRating = oldRating, let currentRating = moveiRatings["Tron"] {
     print("old rating: \(lastRating)")
     print("current rating: \(currentRating)")
 }
+
+moveiRatings["Hackers"] = 5
+//moveiRatings.removeValue(forKey: "Sneakers")
+moveiRatings["Sneakers"] = nil
+g
