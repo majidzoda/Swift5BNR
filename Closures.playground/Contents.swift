@@ -78,3 +78,26 @@ method to your solution to the bronze challenge.
 var volunteerCountsSilverChallenge = [1, 3, 40, 32, 2, 53, 77, 13]
 volunteerCountsSilverChallenge.sort()
 
+/*
+Chapter13: Gold Challenge p. 270
+Use what you have learned about closure syntax in this chapter to perform all the calculations on the
+volunteerAverages array (the map(_:), filter(_:), and reduce(_:_:) calls) in as little code as possible. Your
+entire solution should fit in one (long) line.
+ 
+Consider the balance of brevity and readability in your solution, and experiment with including and excluding
+different compiler-inferrable parts of the closure syntax to find a balance that you feel comfortable with.
+
+Hint: You can chain method calls using dot syntax, so long as the return value of each method is of a type that
+has the next method available on it. For example:
+
+let sortedRoundedAverages = startingArray.map(…).sorted(by:…)
+ 
+sorted(by:) must be called on an Array. This works because map(_:) returns an Array, and sorted(by:) is being
+called on map(_:)’s return value.
+*/
+
+let volunteerAveragesGoldChallenge = [10.75, 4.2, 1.5, 12.12, 16.815]
+let roundedAveragesGoldChallenge = volunteerAveragesGoldChallenge.map { Int($0.rounded())}.filter { $0 >= 10}.reduce(5) {$0 + $1}
+roundedAveragesGoldChallenge
+
+
