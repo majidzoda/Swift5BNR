@@ -26,10 +26,21 @@ func format (numbers: [Double], using formatter: (Double) -> String = { "\($0)" 
     return result
 }
 
-let rounder: (Double) -> String = {
-    (num: Double) -> String in
-    return "\(Int(num.rounded()))"
+func experimentsWithScopes () {
+    var numberOfTransformations = 0
+    
+    let rounder: (Double) -> String = {
+        (num: Double) -> String in
+        numberOfTransformations += 1
+        return "\(Int(num.rounded()))"
+    }
+    
+    let volunteerAverages = [10.75, 4.2, 1.5, 12.12, 16.815]
+    let roundedAverageAsStrings = format(numbers: volunteerAverages, using: rounder)
+    let exactAveragesAsStrings = format(numbers: volunteerAverages)
+    print(numberOfTransformations)
 }
-let volunteerAverages = [10.75, 4.2, 1.5, 12.12, 16.815]
-let roundedAverageAsStrings = format(numbers: volunteerAverages, using: rounder)
-let exactAveragesAsStrings = format(numbers: volunteerAverages)
+
+experimentsWithScopes()
+
+
