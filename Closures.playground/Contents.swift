@@ -68,3 +68,13 @@ largest.
 var volunteerCountsBronzeChallenge = [1, 3, 40, 32, 2, 53, 77, 13]
 volunteerCountsBronzeChallenge.sort { $0 < $1}
 volunteerCountsBronzeChallenge
+
+/*
+Chapter13: Silver Challenge p. 269
+You used sorted(by:) to sort a collection from smallest to largest. But if you just want to sort a collection
+in an ascending fashion, there is a simpler method to use. Use the documentation to find this method. Apply the
+method to your solution to the bronze challenge.
+*/
+var volunteerCountsSilverChallenge = [1, 3, 40, 32, 2, 53, 77, 13]
+volunteerCountsSilverChallenge.sort()
+
