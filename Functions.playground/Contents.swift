@@ -5,10 +5,10 @@ func printGreetings() {
 }
 printGreetings()
 
-func printPersonalGreeting(name: String) {
+func printPersonalGreeting(to name: String) {
     print("Hello, \(name). Welcome to your playground.")
 }
-printPersonalGreeting(name: "step")
+printPersonalGreeting(to: "step")
 
 func divisionDescriptionFor (numerator: Double, denominator: Double) {
     print("\(numerator) divided by \(denominator) is \(numerator / denominator)")
