@@ -26,21 +26,33 @@ func format (numbers: [Double], using formatter: (Double) -> String = { "\($0)" 
     return result
 }
 
-func experimentsWithScopes () {
-    var numberOfTransformations = 0
-    
-    let rounder: (Double) -> String = {
-        (num: Double) -> String in
-        numberOfTransformations += 1
-        return "\(Int(num.rounded()))"
-    }
-    
-    let volunteerAverages = [10.75, 4.2, 1.5, 12.12, 16.815]
-    let roundedAverageAsStrings = format(numbers: volunteerAverages, using: rounder)
-    let exactAveragesAsStrings = format(numbers: volunteerAverages)
-    print(numberOfTransformations)
+var numberOfTransformations = 0
+
+let rounder: (Double) -> String = {
+    (num: Double) -> String in
+    numberOfTransformations += 1
+    return "\(Int(num.rounded()))"
 }
 
-experimentsWithScopes()
+let volunteerAverages = [10.75, 4.2, 1.5, 12.12, 16.815]
+let roundedAverageAsStrings = format(numbers: volunteerAverages, using: rounder)
+let exactAveragesAsStrings = format(numbers: volunteerAverages)
+print(numberOfTransformations)
 
+let roundedAverages = volunteerAverages.map {
+    (avg: Double) -> Int in
+    return Int(avg.rounded())
+}
+roundedAverages
 
+let passingAverage = roundedAverages.filter {
+    (avg: Int) -> Bool in
+    return avg >= 10
+}
+passingAverage
+
+let estimatedParticipation = passingAverage.reduce(5) {
+    (estimationSoFar: Int, currentOrgAverage: Int) -> Int in
+    return estimationSoFar + currentOrgAverage
+}
+estimatedParticipation
