@@ -56,3 +56,15 @@ let estimatedParticipation = passingAverage.reduce(5) {
     return estimationSoFar + currentOrgAverage
 }
 estimatedParticipation
+
+/*
+Chapter13: Bronze Challenge p. 268
+In this chapter, you sorted a collection by returning a new instance of Array with its integers sorted from
+smallest to largest. You can also sort collections in place – meaning modifying the existing collection, rather
+than returning a new one. Change the way you sort volunteerCounts to sort the array in place from smallest to
+largest.
+*/
+
+var volunteerCountsBronzeChallenge = [1, 3, 40, 32, 2, 53, 77, 13]
+volunteerCountsBronzeChallenge.sort { $0 < $1}
+volunteerCountsBronzeChallenge
