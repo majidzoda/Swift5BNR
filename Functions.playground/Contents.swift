@@ -27,3 +27,12 @@ print(error)
 
 print(divisionDescriptionFor(numerator: 9.0, denominator: 3.0))
 print(divisionDescriptionFor(numerator: 9.0, denominator: 30, withPunctuation: "!"))
+
+func areaOfTriangleWith(base: Double, height: Double) -> Double {
+    let rectangle = base * height
+    func divide() -> Double {
+        return rectangle/2
+    }
+    return divide()
+}
+print(areaOfTriangleWith(base: 3.0, height: 5.0))
