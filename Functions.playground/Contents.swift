@@ -71,3 +71,6 @@ func greetByMiddleName (fromFullName name: (first: String, middle: String?, last
     print("Hey \(middleName)")
 }
 greetByMiddleName(fromFullName: ("Alice", "Richards", "Ward"))
+
+let evenOddFunction: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers(_:)
+evenOddFunction([1,2,3])
