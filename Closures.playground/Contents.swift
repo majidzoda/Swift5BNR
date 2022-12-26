@@ -101,3 +101,15 @@ let roundedAveragesGoldChallenge = volunteerAveragesGoldChallenge.map { Int($0.r
 roundedAveragesGoldChallenge
 
 
+func makeCharacterRemover (for character: Character) -> (String) -> String {
+    func removeFrom (_ input: String) -> String {
+        return input.filter { $0 != character}
+    }
+    return removeFrom(_:)
+}
+
+let removeLowerCaseLs = makeCharacterRemover(for: "l")
+let strangeGreeting = removeLowerCaseLs("Hello, World!")
+
+let removeLowerCaseOs = makeCharacterRemover(for: "o")
+let strangerGreeting = removeLowerCaseOs(strangeGreeting)
