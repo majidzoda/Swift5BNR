@@ -10,7 +10,9 @@ func printPersonalGreeting(to name: String) {
 }
 printPersonalGreeting(to: "step")
 
-func divisionDescriptionFor (numerator: Double, denominator: Double) {
-    print("\(numerator) divided by \(denominator) is \(numerator / denominator)")
+func divisionDescriptionFor (numerator: Double, denominator: Double, withPunctuation punctioation: String = ".") {
+    print("\(numerator) divided by \(denominator) is \(numerator / denominator)\(punctioation)")
 }
 divisionDescriptionFor(numerator: 9.0, denominator: 3.0)
+divisionDescriptionFor(numerator: 9.0, denominator: 3.0, withPunctuation: "!")
+
