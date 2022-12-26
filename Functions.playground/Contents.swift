@@ -16,3 +16,11 @@ func divisionDescriptionFor (numerator: Double, denominator: Double, withPunctua
 divisionDescriptionFor(numerator: 9.0, denominator: 3.0)
 divisionDescriptionFor(numerator: 9.0, denominator: 3.0, withPunctuation: "!")
 
+var error = "The request failed:"
+func appendErrorCode (_ code: Int, toErrorString errorString: inout String) {
+    if code == 400 {
+        errorString += " bad request."
+    }
+}
+appendErrorCode(400, toErrorString: &error)
+print(error)
