@@ -10,8 +10,8 @@ func printPersonalGreeting(to name: String) {
 }
 printPersonalGreeting(to: "step")
 
-func divisionDescriptionFor (numerator: Double, denominator: Double, withPunctuation punctioation: String = ".") {
-    print("\(numerator) divided by \(denominator) is \(numerator / denominator)\(punctioation)")
+func divisionDescriptionFor (numerator: Double, denominator: Double, withPunctuation punctioation: String = ".") -> String {
+    return "\(numerator) divided by \(denominator) is \(numerator / denominator)\(punctioation)"
 }
 divisionDescriptionFor(numerator: 9.0, denominator: 3.0)
 divisionDescriptionFor(numerator: 9.0, denominator: 3.0, withPunctuation: "!")
@@ -24,3 +24,6 @@ func appendErrorCode (_ code: Int, toErrorString errorString: inout String) {
 }
 appendErrorCode(400, toErrorString: &error)
 print(error)
+
+print(divisionDescriptionFor(numerator: 9.0, denominator: 3.0))
+print(divisionDescriptionFor(numerator: 9.0, denominator: 30, withPunctuation: "!"))
