@@ -95,6 +95,9 @@ enum ShapeDimensions {
     // rectangle's associated value defines its width and height
     case rectangle(width: Double, height: Double)
     
+    // Chapter14: Enumerations - Bronze Challenge p. 292
+    case rightTriAngle (height: Double, base: Double, hypotenuse: Double)
+    
     func area () -> Double {
         switch self {
         case .point:
@@ -103,6 +106,9 @@ enum ShapeDimensions {
             return side * side
         case let .rectangle(width: w, height: h):
             return w * h
+        // Chapter14: Enumerations - Bronze Challenge p. 292
+        case let .rightTriAngle(height: h, base: b, hypotenuse: hy):
+            return h * b * hy
         }
     }
 }
@@ -130,9 +136,22 @@ extension ShapeDimensions {
             return side * 4
         case let .rectangle(width: w, height: h):
             return w * 2 + h * 2
+        // Chapter14: Enumerations - Bronze Challenge p. 292
+        case let .rightTriAngle(height: h, base: b, hypotenuse: hy):
+            return h + b + hy
         }
     }
 }
 print("square's perimeter = \(squareShape.perimeter())")
 print("rectangle's perimter = \(rectShape.perimeter())")
 print("point's permiter = \(pointShape.perimeter())")
+
+
+/*
+Chapter14: Enumerations - Silver Challenge p. 293
+Add another case to the ShapeDimensions enum for a right triangle. You can ignore the orientation of
+the triangle. Just keep track of the lengths of its three sides. Adding a new case will cause your playground to give
+you an error in the area() method. Fix the error.
+*/
+
+// Solution: line 98, 99, 109, 110, 139 & 140
