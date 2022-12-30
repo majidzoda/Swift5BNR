@@ -9,6 +9,9 @@ struct Town {
     }
     
     mutating func changePopulation (by amount: Int) {
-        population += amount
+        // population += amount
+        
+        // Chapter15: Struct and Clases - Bronze Challenge p. 330
+        population = population + amount < 0 ? 0 : population + amount
     }
 }
