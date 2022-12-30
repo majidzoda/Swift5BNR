@@ -114,3 +114,25 @@ var pointShape = ShapeDimensions.point
 print("square's area = \(squareShape.area())")
 print("rectangle's area = \(rectShape.area())")
 print("point's area = \(pointShape.area())")
+
+/*
+Chapter14: Enumerations - Bronze Challenge p. 292
+Add a perimeter() method to the ShapeDimensions enum. This method should compute the perimeter of a shape (the sum of
+the length of all its edges). Make sure you handle all the cases!
+*/
+
+extension ShapeDimensions {
+    func perimeter () -> Double {
+        switch self {
+        case .point:
+            return 0
+        case let .square(side: side):
+            return side * 4
+        case let .rectangle(width: w, height: h):
+            return w * 2 + h * 2
+        }
+    }
+}
+print("square's perimeter = \(squareShape.perimeter())")
+print("rectangle's perimter = \(rectShape.perimeter())")
+print("point's permiter = \(pointShape.perimeter())")
