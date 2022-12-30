@@ -11,6 +11,7 @@
 		91EAF41C295F63E6001968BE /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAF41B295F63E6001968BE /* Town.swift */; };
 		91EAF41E295F68D5001968BE /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAF41D295F68D5001968BE /* Monster.swift */; };
 		91EAF420295F6D22001968BE /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAF41F295F6D22001968BE /* Zombie.swift */; };
+		91EAF422295F7E16001968BE /* Vampire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAF421295F7E15001968BE /* Vampire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		91EAF41B295F63E6001968BE /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		91EAF41D295F68D5001968BE /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		91EAF41F295F6D22001968BE /* Zombie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
+		91EAF421295F7E15001968BE /* Vampire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vampire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				91EAF414295F608A001968BE /* main.swift */,
+				91EAF421295F7E15001968BE /* Vampire.swift */,
 				91EAF41D295F68D5001968BE /* Monster.swift */,
 				91EAF41F295F6D22001968BE /* Zombie.swift */,
 				91EAF41B295F63E6001968BE /* Town.swift */,
@@ -132,6 +135,7 @@
 				91EAF415295F608A001968BE /* main.swift in Sources */,
 				91EAF420295F6D22001968BE /* Zombie.swift in Sources */,
 				91EAF41E295F68D5001968BE /* Monster.swift in Sources */,
+				91EAF422295F7E16001968BE /* Vampire.swift in Sources */,
 				91EAF41C295F63E6001968BE /* Town.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,3 +35,27 @@ fredTheZombie.town?.printDescription()
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
 
+/*
+Chapter15: Struct and Clases - Silver Challenge p 331
+Vampires are monsters that sometimes turn people into other vampires.
+ 
+Create another subclass of the Monster type. Call this one Vampire. Give it a thralls property to hold an empty array of other Vampire instances.
+ 
+In your new class, override the terrorizeTown() method to do everything that the superclass's implementation does plus capture one of the townspeople and make them
+into a vampire thrall. Do this by adding an instance of Vampire to its thralls array and decrementing the town's population by one.
+ 
+Ensure that a thrall is only made (and the town's population changed) if the terrorized town had at least one person in it.
+ 
+Exercise this Vampire type in main.swift by creating one and making it terrorize a town several times. Each time, print the changes to the vampire's thralls and the
+town's population to make sure it works.
+*/
+
+print("\nSilver Challenge")
+var ariTheVampire = Vampire()
+ariTheVampire.town = myTown
+print("ariTheVampire thralls size: \(ariTheVampire.thralls.count)")
+ariTheVampire.town?.printDescription()
+ariTheVampire.terrorizeTown()
+ariTheVampire.town?.printDescription()
+print("ariTheVampire thralls size: \(ariTheVampire.thralls.count)")
+
