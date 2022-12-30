@@ -4,7 +4,7 @@ class Monster {
     var town: Town?
     var name = "Monster"
     
-    func terrorizeTown() {
+    final func terrorizeTown() {
         if town != nil {
             print("\(name) is terrorizing a town!")
         } else {
