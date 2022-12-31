@@ -28,6 +28,7 @@ town’s population if the new population is less than the old value.
 Solution in: Town.swift line 9
 */
 
+
 /*
 Chapter16: Properties Silver Challenge p. 360
 Make a new type called Mayor. It should be a struct. The Town type should have a property called mayor that holds an instance of the Mayor type.
@@ -40,3 +41,19 @@ If the population increases, then the mayor should do nothing. (Hint: You should
 */
 fredTheZombie.town?.mayor = Mayor()
 fredTheZombie.terrorizeTown()
+
+/*
+Chapter16: Properties Gold Challenge p. 361
+Mayors are people, too. An instance of the Mayor type will naturally get
+nervous whenever its town loses some population due to a Zombie attack. Create
+a stored instance property on the Mayor type called anxietyLevel. It should be
+of type Int and should start out with a default value of 0.
+ 
+Increment the anxietyLevel property every time a Mayor instance is notified of
+a Zombie attack. Last, as a mayor will not want to outwardly display anxiety,
+use access control to protect this property. Verify that this property is not
+accessible from main.swift.
+*/
+
+// Uncomment line 59 to verify anxietyLevel is a private stored propery
+//fredTheZombie.town?.mayor?.anxietyLevel
