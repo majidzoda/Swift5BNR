@@ -1,7 +1,10 @@
 import Foundation
 
 var myTown = Town()
-myTown.changePopulation(by: 500)
+let myTownSize = myTown.townSize
+print(myTownSize)
+myTown.changePopulation(by: 1_000_000)
+print("Size: \(myTown.townSize); population: \(myTown.population)")
 
 let fredTheZombie = Zombie()
 fredTheZombie.town = myTown
