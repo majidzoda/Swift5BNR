@@ -1,6 +1,7 @@
 import Foundation
 
 struct Town {
+    let region = "Middle"
     var population = 5_422
     var numberOfStopLights = 4
     
