@@ -5,13 +5,16 @@ class Zombie: Monster {
         return "Brains..."
     }
     var walksWithLamp = true
+    private var isFallingApart = false
     
     func regenerate() {
         walksWithLamp = false
     }
     
     override func terrorizeTown() {
-        town?.changePopulation(by: -10)
+        if !isFallingApart {
+            town?.changePopulation(by: -10)
+        }
         super.terrorizeTown()
         regenerate()
     }
