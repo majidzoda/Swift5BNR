@@ -5,7 +5,8 @@ struct Town {
     let region = "Middle"
     var population = 5_422 {
         didSet (oldPopulation) {
-            print("The population has changed to \(population) from \(oldPopulation).")
+//        Chapter16: Properties Bronze Challenge p. 359
+            print(population < oldPopulation ? "The population has changed to \(population) from \(oldPopulation)." : "")
         }
     }
     var numberOfStopLights = 4
