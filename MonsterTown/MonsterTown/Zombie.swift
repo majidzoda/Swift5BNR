@@ -5,7 +5,8 @@ class Zombie: Monster {
         return "Brains..."
     }
     var walksWithLamp = true
-    private var isFallingApart = false
+//    internal private(set) var isFallingApart = false
+    private(set) var isFallingApart = false
     
     func regenerate() {
         walksWithLamp = false
