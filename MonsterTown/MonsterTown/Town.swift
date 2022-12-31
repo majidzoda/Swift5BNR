@@ -1,12 +1,17 @@
 import Foundation
 
 struct Town {
+    var mayor: Mayor?
     static let world = "Earth"
     let region = "Middle"
     var population = 5_422 {
         didSet (oldPopulation) {
-//        Chapter16: Properties Bronze Challenge p. 359
-            print(population < oldPopulation ? "The population has changed to \(population) from \(oldPopulation)." : "")
+            if population < oldPopulation{
+                //        Chapter16: Properties Bronze Challenge p. 359
+                print("Mayor: The population has changed to \(population) from \(oldPopulation).")
+                //        Chapter16: Properties Silver Challenge p. 360
+                mayor?.makeAStatement()
+            }
         }
     }
     var numberOfStopLights = 4
