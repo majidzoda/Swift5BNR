@@ -4,8 +4,14 @@ class Zombie: Monster {
     override class var spookyNoise: String {
         return "Brains..."
     }
-    var walksWithLamp = true
-    private(set) var isFallingApart = false
+    var walksWithLamp: Bool
+    private(set) var isFallingApart: Bool
+    
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+        walksWithLamp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
+    }
     
     func regenerate() {
         walksWithLamp = false
