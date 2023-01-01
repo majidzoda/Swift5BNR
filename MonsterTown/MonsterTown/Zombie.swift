@@ -20,6 +20,12 @@ class Zombie: Monster {
         }
     }
     
+    required init(town: Town?, monsterName: String) {
+        walksWithLamp = false
+        isFallingApart = false
+        super.init(town: town, monsterName: monsterName)
+    }
+    
     func regenerate() {
         walksWithLamp = false
     }
