@@ -20,10 +20,9 @@ class Zombie: Monster {
         }
     }
     
-    required init(town: Town?, monsterName: String) {
-        walksWithLamp = false
-        isFallingApart = false
-        super.init(town: town, monsterName: monsterName)
+    required convenience init(town: Town?, monsterName: String) {
+//    Chapter17: initializers - Silver Challenge p. 394
+        self.init(limp: false, fallingApart: false, town: town, monsterName: monsterName)
     }
     
     deinit {

@@ -21,3 +21,14 @@ if Zombie.isTerrifying {
     print("Run away!")
 }
 fredTheZombie = nil
+
+/*
+Chapter17: initializers - Silver Challenge p. 394
+Currently, the required initializer on the Monster class
+is implemented as a designated initializer on the Zombie subclass. Make
+this initializer a convenience initializer on the Zombie class instead.
+This change will involve delegating across the Zombie class to its
+designated initializer.
+ 
+Solution: Zombie.swift line 25
+*/
