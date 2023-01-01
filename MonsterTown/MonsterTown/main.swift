@@ -11,6 +11,8 @@ let fredTheZombie = Zombie(limp: false, fallingApart: false, town: myTown, monst
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
 
+var convinienceZombie = Zombie(limp: true, fallingApart: false)
+
 print("Victim pool: \(fredTheZombie.victimPool)")
 fredTheZombie.victimPool = 500
 print("Victim pool: \(fredTheZombie.victimPool)")
