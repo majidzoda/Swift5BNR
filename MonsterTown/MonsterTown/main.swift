@@ -32,3 +32,19 @@ designated initializer.
  
 Solution: Zombie.swift line 25
 */
+
+/*
+Chapter17: initializers - Silver Challenge p. 395
+The Monster class can be initialized with any String instance for the monsterName
+parameter, even an empty String. Doing so would lead to an instance of Monster with
+no name. Even though Frankenstein’s monster had no name, you want all of yours to
+be individually identified. Fix this problem in the Monster class by ensuring that
+monsterName cannot be empty.
+ 
+Your solution will involve giving Monster a failable initializer. Note that this
+change will have an impact on initialization in the Zombie subclass. Make the
+necessary adjustments in this class as well.
+ 
+Solution: Monster.swift lines 20 -23
+          Zombie.swift lines: 11, 17, 25g
+*/

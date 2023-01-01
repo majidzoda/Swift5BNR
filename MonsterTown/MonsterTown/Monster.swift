@@ -16,7 +16,11 @@ class Monster {
         }
     }
     
-    required init(town: Town?, monsterName: String) {
+//Chapter17: initializers - Silver Challenge p. 395
+    required init?(town: Town?, monsterName: String) {
+        guard monsterName != "" else {
+            return nil
+        }
         self.town = town
         name = monsterName
     }
