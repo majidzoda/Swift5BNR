@@ -1,6 +1,7 @@
 import Foundation
 
-var myTown = Town()
+var myTown = Town(population: 10_000, numberOfStopLights: 6)
+myTown.printDescription()
 let myTownSize = myTown.townSize
 print(myTownSize)
 myTown.changePopulation(by: 1_000_000)

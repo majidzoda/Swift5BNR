@@ -4,7 +4,7 @@ class Zombie: Monster {
     override class var spookyNoise: String {
         return "Brains..."
     }
-    var walksWithLamp = trueg
+    var walksWithLamp = true
     private(set) var isFallingApart = false
     
     func regenerate() {
