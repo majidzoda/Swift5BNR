@@ -16,6 +16,10 @@ struct Town {
         numberOfStopLights = stopLights
     }
     
+    init(population: Int, stoplights: Int) {
+        self.init(region: "N/A", population: population, stopLights: stoplights)
+    }
+    
     enum Size {
         case small
         case medium
@@ -34,7 +38,7 @@ struct Town {
     }
     
     func printDescription () {
-        print("Population: \(population); number of stopLights: \(numberOfStopLights)")
+        print("Population: \(population); number of stopLights: \(numberOfStopLights); region: \(region)")
     }
     
     mutating func changePopulation (by amount: Int) {
