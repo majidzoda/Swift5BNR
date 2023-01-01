@@ -26,6 +26,10 @@ class Zombie: Monster {
         super.init(town: town, monsterName: monsterName)
     }
     
+    deinit {
+        print("Zombie \(name) is no longer with us.")
+    }
+    
     func regenerate() {
         walksWithLamp = false
     }
