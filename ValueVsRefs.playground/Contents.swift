@@ -14,3 +14,12 @@ let theBoss = anika
 anika.id = 16
 anika.id
 theBoss.id
+
+struct Company {
+    var boss: Employee
+}
+let acme = Company(boss: anika)
+let mel = Employee()
+//acme.boss = mel Compiler: Cannot assign to property: 'acme' is a 'let' constant.
+mel.id = 86
+mel.id
