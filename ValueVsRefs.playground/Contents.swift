@@ -23,3 +23,8 @@ let mel = Employee()
 //acme.boss = mel Compiler: Cannot assign to property: 'acme' is a 'let' constant.
 mel.id = 86
 mel.id
+
+acme.boss.id
+let widgetCo = acme
+anika.id = 15
+widgetCo.boss.id
