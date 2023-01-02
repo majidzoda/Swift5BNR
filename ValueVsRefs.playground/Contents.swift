@@ -36,3 +36,8 @@ let partyGoers = employees
 employees.last?.id = 4
 employees
 partyGoers
+
+acme.boss === anika
+let joe = Employee()
+let sam = Employee()
+joe === sam
