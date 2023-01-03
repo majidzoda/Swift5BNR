@@ -113,3 +113,5 @@ The printTable(_:) function has a bug: It crashes if any of the data items are l
 1,000 to see this happen. Fix the bug. Your solution will likely result in incorrect table formatting; that is fine for now. You will fix the
 formatting in the gold challenge, below.
 */
+
+// Solution: line 35
