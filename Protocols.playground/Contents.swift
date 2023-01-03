@@ -1,6 +1,6 @@
 import Cocoa
 
-protocol TabularDataSource: CustomStringConvertible {
+protocol TabularDataSource {
     var numberOfRows: Int { get }
     var numbersOfColumns: Int { get }
     
@@ -9,7 +9,7 @@ protocol TabularDataSource: CustomStringConvertible {
     func itemFor(row: Int, column: Int) -> String
 }
 
-func printTable(_ dataSource: TabularDataSource) {
+func printTable(_ dataSource: TabularDataSource & CustomStringConvertible) {
     print("Table: \(dataSource)")
     // Create a header row containing column headers
     var headerRow = "|"
@@ -48,7 +48,7 @@ struct Person {
     let yearsOfExperience: Int
 }
 
-struct Department: TabularDataSource {
+struct Department: TabularDataSource, CustomStringConvertible {
     let name: String
     var people = [Person]()
     
