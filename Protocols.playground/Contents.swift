@@ -32,7 +32,7 @@ func printTable(_ dataSource: TabularDataSource & CustomStringConvertible) {
         // Append each item in this rown to the string
         for j in 0..<dataSource.numbersOfColumns {
             let item = dataSource.itemFor(row: i, column: j)
-            let paddingNeeded = columnWidths[j] - item.count
+            let paddingNeeded = columnWidths[j] - item.count < 0 ? columnWidths[j] + item.count : columnWidths[j] - item.count
             let padding = repeatElement(" ", count: paddingNeeded).joined(separator: "")
             out += " \(padding)\(item) |"
         }
@@ -95,7 +95,7 @@ struct Department: TabularDataSource, CustomStringConvertible {
 }
 
 var department = Department(name: "Engineering")
-department.add(Person(name: "Eva", age: 30, yearsOfExperience: 6))
+department.add(Person(name: "Eva", age: 1000, yearsOfExperience: 6))
 department.add(Person(name: "Saleh", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Amit", age: 50, yearsOfExperience: 20))
 
@@ -106,3 +106,10 @@ let engineeringDataSource = department as TabularDataSource
 
 let mikey = Person(name: "Mikey", age: 37, yearsOfExperience: 10)
 mikey is TabularDataSource
+
+/*
+Chapter19: Protocols - Bronze Challenge p. 458
+The printTable(_:) function has a bug: It crashes if any of the data items are longer than the label of their column. Try changing Eva’s age to
+1,000 to see this happen. Fix the bug. Your solution will likely result in incorrect table formatting; that is fine for now. You will fix the
+formatting in the gold challenge, below.
+*/
