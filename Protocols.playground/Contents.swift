@@ -47,9 +47,13 @@ struct Person {
     let yearsOfExperience: Int
 }
 
-struct Department: TabularDataSource {
+struct Department: TabularDataSource, CustomStringConvertible {
     let name: String
     var people = [Person]()
+    
+    var description: String {
+        return "Department \(name)"
+    }
     
     init(name: String) {
         self.name = name
@@ -95,3 +99,4 @@ department.add(Person(name: "Saleh", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Amit", age: 50, yearsOfExperience: 20))
 
 printTable(department)
+print(department)
