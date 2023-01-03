@@ -100,3 +100,9 @@ department.add(Person(name: "Saleh", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Amit", age: 50, yearsOfExperience: 20))
 
 printTable(department)
+
+let operationsDataSource: TabularDataSource = Department(name: "Operations")
+let engineeringDataSource = department as TabularDataSource
+
+let mikey = Person(name: "Mikey", age: 37, yearsOfExperience: 10)
+mikey is TabularDataSource
