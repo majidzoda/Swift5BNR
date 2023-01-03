@@ -42,7 +42,7 @@ case .justify:
     print("justified")
 }
 
-enum ProgrammingLanguage: String {
+enum ProgrammingLanguage: String, CaseIterable {
     case swift
     case objectiveC = "objective-c"
     case c
@@ -114,3 +114,28 @@ var pointShape = ShapeDimensions.point
 print("square's area = \(squareShape.area())")
 print("rectangle's area = \(rectShape.area())")
 print("point's area = \(pointShape.area())")
+
+/*
+Chapter19: Protocols - Electrum Challenge p. 460
+This challenge will exercise your understanding of multiple topics that you have studied so far.
+ 
+Sometimes protocols are used to add behavior to existing types, as you will explore in Chapter 22 on protocol
+extensions. One such protocol can be used to let you loop over the cases of any enum that does not have associated
+values: CaseIterable.
+ 
+Open your Enumerations.playground file and declare your ProgrammingLanguage enum to conform to the CaseIterable
+protocol. Using a loop, print all the enum’s cases. Your output should look like this: swift
+    objective-c
+    c
+    c++
+    java
+You will need to explore the CaseIterable protocol reference in the developer documentation. To turn this into a gold
+challenge, do not use a loop. Instead, use what you learned about map(_:) in Chapter 13 to make your output look like
+this: ["swift", "objective-c", "c", "c++", "java"]
+*/
+
+for en in ProgrammingLanguage.allCases {
+    print(en)
+}
+
+print(ProgrammingLanguage.allCases.map(\.rawValue))
