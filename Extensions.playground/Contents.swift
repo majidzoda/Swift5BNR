@@ -71,3 +71,24 @@ currentCar.emptyFuel(by: 0.3)
 currentCar.fuelLevel
 currentCar.fillFuel()
 currentCar.fuelLevel
+
+/*
+Chapter20: Extensions - Silver Challenge p. 472
+Give the Int type a nested enum with cases even and odd. Also give Int a property of that type to correctly report whether an integer
+is even or odd.
+*/
+
+extension Int {
+    enum EvenOrOdd {
+        case even, odd
+    }
+    var evenOrOdd: EvenOrOdd {
+        return self % 2 == 0 ? .even : .odd
+    }
+}
+
+var odd = 5
+odd.evenOrOdd
+
+var even = 10
+even.evenOrOdd
