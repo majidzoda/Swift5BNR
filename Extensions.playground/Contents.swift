@@ -35,3 +35,24 @@ extension Car {
 var currentCar = Car(make: "Honda", model: "Civic", year: 2008)
 firstCar.fuelLevel
 currentCar.fuelLevel
+
+extension Car {
+    enum Era {
+        case veteran, brass, vintage, modern
+    }
+    
+    var era: Era {
+        switch year {
+        case ...1896:
+            return .veteran
+        case 1897...1919:
+            return .brass
+        case 1920...1930:
+            return .vintage
+        default:
+            return .modern
+        }
+    }
+}
+firstCar.era
+
