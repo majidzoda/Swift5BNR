@@ -56,3 +56,18 @@ extension Car {
 }
 firstCar.era
 
+extension Car {
+    mutating func emptyFuel(by amount: Double){
+        precondition(amount <= 1 && amount > 0, "Amount to remove must be between 0 and 1")
+        fuelLevel -= amount
+    }
+    
+    mutating func fillFuel(){
+        fuelLevel = 1.0
+    }
+}
+
+currentCar.emptyFuel(by: 0.3)
+currentCar.fuelLevel
+currentCar.fillFuel()
+currentCar.fuelLevel
