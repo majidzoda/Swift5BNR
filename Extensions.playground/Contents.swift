@@ -25,3 +25,13 @@ extension Car: CustomStringConvertible {
         return "\(year) \(make) \(model), fuel level: \(fuelLevel)"
     }
 }
+
+extension Car {
+    init(make: String, model: String, year: Int) {
+        self.init(make: make, model: model, year: year, fuelLevel: 1.0)
+    }
+}
+
+var currentCar = Car(make: "Honda", model: "Civic", year: 2008)
+firstCar.fuelLevel
+currentCar.fuelLevel
