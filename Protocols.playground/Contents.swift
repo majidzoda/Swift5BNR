@@ -48,13 +48,9 @@ struct Person {
     let yearsOfExperience: Int
 }
 
-struct Department: TabularDataSource, CustomStringConvertible {
+struct Department: TabularDataSource {
     let name: String
     var people = [Person]()
-    
-    var description: String {
-        return "Department \(name)"
-    }
     
     init(name: String) {
         self.name = name
@@ -106,3 +102,17 @@ let engineeringDataSource = department as TabularDataSource
 
 let mikey = Person(name: "Mikey", age: 37, yearsOfExperience: 10)
 mikey is TabularDataSource
+
+/*
+Chapter19: Extensions - Bronze Challenge p. 471
+In Chapter 19, you made the Department type conform to the CustomStringConvertible protocol. Refactor your playground from that chapter to move
+CustomStringConvertible conformance into an extension.
+*/
+
+extension Department: CustomStringConvertible {
+    var description: String {
+        return "Department \(name)"
+    }
+}
+
+print(department)
