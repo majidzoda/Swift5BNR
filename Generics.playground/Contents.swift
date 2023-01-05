@@ -185,14 +185,33 @@ element was found in the array. For example, findAll([5,3,7,3,9], 3) should retu
 1 and 3 in the array. Try your function with both integers and strings.
 */
 
-func findAll<T: Equatable>(_ array: [T], _ element: T) -> [Int] {
+//func findAll<T: Equatable>(_ array: [T], _ element: T) -> [Int] {
+//    var result = [Int]()
+//    for (index, value) in array.enumerated() {
+//        if value == element {
+//            result.append(index)
+//        }
+//    }
+//    return result
+//}
+//
+//findAll([5,3,7,3,9], 3)
+
+/*
+Chapter21: Generics - Gold Challenge p. 503
+Modify the findAll(_:_:) function you wrote for the silver challenge to accept a generic Collection instead of an array. Hint:
+You will need to change the return type from [Int] to an array of an associated type of the Collection protocol.
+*/
+
+
+func findAll<T: Collection, U: Equatable>(_ array: T, _ element: U) -> T where T.Element == U {
     var result = [Int]()
     for (index, value) in array.enumerated() {
         if value == element {
             result.append(index)
         }
     }
-    return result
+    return result as! T
 }
 
 findAll([5,3,7,3,9], 3)
