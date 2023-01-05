@@ -175,3 +175,24 @@ Element and returns a Bool, and return a new Stack<Element> that contains any el
 
 print(String(describing: myStack))
 print(String(describing: myStack.filter({ $0 % 2 == 0 })))
+
+
+/*
+Chapter21: Generics - Silver Challenge p. 502
+Write a generic function called findAll(_:_:) that takes an array of any type T that conforms to the Equatable protocol and a
+single element (also of type T). findAll(_:_:) should return an array of integers corresponding to every location where the
+element was found in the array. For example, findAll([5,3,7,3,9], 3) should return [1,3] because the item 3 exists at indices
+1 and 3 in the array. Try your function with both integers and strings.
+*/
+
+func findAll<T: Equatable>(_ array: [T], _ element: T) -> [Int] {
+    var result = [Int]()
+    for (index, value) in array.enumerated() {
+        if value == element {
+            result.append(index)
+        }
+    }
+    return result
+}
+
+findAll([5,3,7,3,9], 3)g
