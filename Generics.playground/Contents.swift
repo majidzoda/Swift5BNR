@@ -195,4 +195,4 @@ func findAll<T: Equatable>(_ array: [T], _ element: T) -> [Int] {
     return result
 }
 
-findAll([5,3,7,3,9], 3)g
+findAll([5,3,7,3,9], 3)
