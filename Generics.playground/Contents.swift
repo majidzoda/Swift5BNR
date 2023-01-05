@@ -39,6 +39,15 @@ struct Stack<Element>: Sequence {
             self.push(item)
         }
     }
+    
+    //Chapter21: Generics - Bronze Challenge p. 501
+    func filter(_ by: (Element) -> Bool) -> Stack<Element> {
+        var result = Stack<Element>()
+        for item in self {
+            if by(item) { result.push(item) }
+        }
+        return result
+    }
 }
 var intStack = Stack<Int>()
 intStack.push(1)
@@ -157,3 +166,12 @@ struct Restauruant {
 let restaurnat = Restauruant()
 let toast = restaurnat.makeToast()
 eat(toast)
+
+/*
+Chapter21: Generics - Bronze Challenge p. 501
+Add a filter(_:) method to your Stack structure. It should take a single argument, a closure that takes an
+Element and returns a Bool, and return a new Stack<Element> that contains any elements for which the closure returns true.
+*/
+
+print(String(describing: myStack))
+print(String(describing: myStack.filter({ $0 % 2 == 0 })))
