@@ -33,6 +33,12 @@ struct Stack<Element>: Sequence {
     func makeIterator() -> StackIterator<Element> {
         return StackIterator(stack: self)
     }
+    
+    mutating func pushAll<S: Sequence>(_ sequence: S) where S.Element == Element {
+        for item in sequence {
+            self.push(item)
+        }
+    }
 }
 var intStack = Stack<Int>()
 intStack.push(1)
@@ -94,3 +100,60 @@ while let value = myStackIterator.next() {
 for value in myStack {
     print("for-in loop: got \(value)")
 }
+
+myStack.pushAll([1, 2, 3])
+for value in myStack {
+    print("after pushing items: got \(value)")
+}
+
+var myOtherStack = Stack<Int>()
+myOtherStack.pushAll([1, 2, 3])
+myStack.pushAll(myOtherStack)
+for value in myStack {
+    print("after pushing items onto stack, got \(value)")
+}
+
+protocol Food {
+    var menuListings: String { get }
+}
+
+struct Bread: Food {
+    var kind = "sourdough"
+    var menuListings: String {
+        "\(kind) bread"
+    }
+}
+
+func eat<T: Food>(_ food: T) {
+    print("I sure love \(food.menuListings).")
+}
+eat(Bread())
+
+struct Restauruant {
+    struct  SliceFood<Ingredient: Food>: Food {
+        var food: Ingredient
+        var menuListings: String {
+            "a slice of \(food.menuListings)"
+        }
+    }
+    
+    struct CookedFood<Ingredients: Food>: Food {
+        var food: Ingredients
+        var menuListings: String{
+            "\(food.menuListings), cooked to perfection"
+        }
+    }
+    
+    func makeSliceBread() -> some Food {
+        return SliceFood(food: Bread())
+    }
+    
+    func makeToast() -> some Food {
+        var slicedBread = SliceFood(food: Bread())
+        return CookedFood(food: slicedBread)
+    }
+}
+
+let restaurnat = Restauruant()
+let toast = restaurnat.makeToast()
+eat(toast)
