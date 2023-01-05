@@ -1,6 +1,16 @@
 import Cocoa
 
-struct Stack<Element> {
+struct StackIterator<T>: IteratorProtocol {
+//    typealias Element = T
+    
+    var stack: Stack<T>
+    
+    mutating func next() -> T? {
+        return stack.pop()
+    }
+}
+
+struct Stack<Element>: Sequence {
     var items = [Element]()
     
     mutating func push(_ newElement: Element){
@@ -18,6 +28,10 @@ struct Stack<Element> {
             mappedItems.append(txform(item))
         }
         return Stack<U>(items: mappedItems)
+    }
+    
+    func makeIterator() -> StackIterator<Element> {
+        return StackIterator(stack: self)
     }
 }
 var intStack = Stack<Int>()
@@ -55,14 +69,28 @@ func checkIfEqual<T: Equatable>(_ first: T, second: T) -> Bool {
     return first == second
 }
 
-print(checkIfEqual(1, second: 1))
-print(checkIfEqual("a string", second: "a string"))
-print(checkIfEqual("a string", second: " a different string"))
+//print(checkIfEqual(1, second: 1))
+//print(checkIfEqual("a string", second: "a string"))
+//print(checkIfEqual("a string", second: " a different string"))
 
 func checkIfDescriptionMatch<T: CustomStringConvertible, U: CustomStringConvertible>(_ first: T, _ second: U) -> Bool {
     return first.description == second.description
 }
 
-print(checkIfDescriptionMatch(Int(1),  UInt(1)))
-print(checkIfDescriptionMatch(1, 1.0))
-print(checkIfDescriptionMatch(Float(1.0), Double(1.0)))
+//print(checkIfDescriptionMatch(Int(1),  UInt(1)))
+//print(checkIfDescriptionMatch(1, 1.0))
+//print(checkIfDescriptionMatch(Float(1.0), Double(1.0)))
+
+var myStack = Stack<Int>()
+myStack.push(10)
+myStack.push(20)
+myStack.push(30)
+
+var myStackIterator = StackIterator(stack: myStack)
+while let value = myStackIterator.next() {
+    print("got \(value)")
+}
+
+for value in myStack {
+    print("for-in loop: got \(value)")
+}
