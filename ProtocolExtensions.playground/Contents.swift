@@ -41,3 +41,16 @@ extension Exercise {
 
 let ellipticalCopy = ellipticalWorkout.adding(calories: 50)
 let runningCopy = runningWorkout.adding(calories: 100)
+
+extension Sequence where Element == Exercise {
+    func totalCaloriesBurned() -> Double {
+        var total: Double = 0
+        for exercise in self {
+            total += exercise.caloriesBurned
+        }
+        return total
+    }
+}
+
+let mondayWorkout: [Exercise] = [ellipticalWorkout, runningWorkout]
+print(mondayWorkout.totalCaloriesBurned())
