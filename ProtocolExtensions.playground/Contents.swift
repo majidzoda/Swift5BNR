@@ -1,8 +1,14 @@
 import Cocoa
 
-protocol Exercise {
+protocol Exercise: CustomStringConvertible {
     var caloriesBurned: Double { get set }
     var minutes: Double { get set }
+}
+
+extension Exercise {
+    var description: String {
+        return "Exercise(\(Self.self), burned \(caloriesBurned) calories in \(minutes) minutes)"
+    }
 }
 
 
@@ -17,6 +23,10 @@ struct RunningWorkout: Exercise {
     var caloriesBurned: Double
     var minutes: Double
     var meters: Double
+    
+    var description: String {
+        return "RunningWorkout(\(caloriesBurned) calories and \(meters)m in \(minutes) minutes)"
+    }
 }
 
 let runningWorkout = RunningWorkout(caloriesBurned: 350, minutes: 25, meters: 5000)
@@ -29,6 +39,9 @@ extension Exercise {
 
 print(ellipticalWorkout.caloriesBurnedPerMinute)
 print(runningWorkout.caloriesBurnedPerMinute)
+
+print(ellipticalWorkout)
+print(runningWorkout)
 
 extension Exercise {
     func adding(calories: Double) -> Self {
