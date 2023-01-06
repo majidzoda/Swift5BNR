@@ -3,6 +3,7 @@ import Cocoa
 protocol Exercise: CustomStringConvertible {
     var caloriesBurned: Double { get set }
     var minutes: Double { get set }
+    var title: String { get }
 }
 
 extension Exercise {
@@ -20,6 +21,7 @@ struct EllipticalWorkout: Exercise {
 let ellipticalWorkout = EllipticalWorkout(caloriesBurned: 335, minutes: 30)
 
 struct RunningWorkout: Exercise {
+    let title = "Gotta go fast!"
     var caloriesBurned: Double
     var minutes: Double
     var meters: Double
@@ -67,3 +69,15 @@ extension Sequence where Element == Exercise {
 
 let mondayWorkout: [Exercise] = [ellipticalWorkout, runningWorkout]
 print(mondayWorkout.totalCaloriesBurned())
+
+extension Exercise {
+    var title: String {
+        return "\(Self.self) - \(minutes) minutes"
+    }
+}
+
+let tenKRun: RunningWorkout = RunningWorkout(caloriesBurned: 750, minutes: 60, meters: 10000)
+let workout: Exercise = tenKRun
+
+print(tenKRun.title)
+print(workout.title)
