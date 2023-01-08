@@ -3,6 +3,7 @@ import UIKit
 enum Token: CustomStringConvertible {
     case number(Int)
     case plus
+    case minus
     
     var description: String {
         switch self {
@@ -10,6 +11,8 @@ enum Token: CustomStringConvertible {
             return "Number: \(n)"
         case .plus:
             return "Symbol: +"
+        case .minus:
+            return "Symbol: -"
         }
     }
 }
@@ -68,6 +71,9 @@ class Lexer {
             case "+":
                 tokens.append(.plus)
                 advance()
+            case "-":
+                tokens.append(.minus)
+                advance()
             case " ":
                 // Just advance to ignore spaces
                 advance()
@@ -111,6 +117,8 @@ class Parser {
             return value
         case .plus:
             throw Parser.Error.invalidToken(token)
+        case .minus:
+            throw Parser.Error.invalidToken(token)
         }
     }
     
@@ -125,6 +133,11 @@ class Parser {
                 // After a plus, we must get another number
                 let nextNumber = try getNumber()
                 value += nextNumber
+            // Getting a plus after number is legal
+            case .minus:
+            // After a plus, we must get another number
+                let nextNumber = try getNumber()
+                value -= nextNumber
             // Getting a number after a number is not legal
             case .number:
                 throw Parser.Error.invalidToken(token)
@@ -159,4 +172,13 @@ func evaluate(_ input: String) {
 }
 
 evaluate("10 + 3 + 5")
-evaluate("1 + 2 + three")
+//evaluate("1 + 2 + three")
+
+/*
+CHapter23: Error Handling - Bronze Challenge p. 559
+Your expression evaluator currently only supports addition.
+That is not very useful! Add support for subtraction. You
+should be able to call evaluate("10 + 5 - 3 - 1") and see it
+output 11.
+*/
+evaluate("10 + 5 - 3 - 1")
