@@ -10,11 +10,12 @@ class Asset {
     weak var container: Vault?
     
     typealias ValueChangeHandler = (Double) -> Void
-    var changeHandler: ValueChangeHandler = { _ in }
+    var changeHandler: ValueChangeHandler
 
-    init(name: String, value: Double) {
+    init(name: String, value: Double, changeHandler: @escaping ValueChangeHandler = { _ in }) {
         self.name = name
         self.value = value
+        self.changeHandler = changeHandler
     }
 
     deinit {
