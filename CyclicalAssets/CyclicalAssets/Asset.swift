@@ -23,7 +23,11 @@ class Asset {
     }
 }
 
-extension Asset: CustomStringConvertible {
+extension Asset: CustomStringConvertible, Equatable {
+    static func == (lhs: Asset, rhs: Asset) -> Bool {
+        return lhs.value == rhs.value && lhs.name == rhs.name  
+    }
+    
     var description: String {
         if let container = container {
             return "Asset(\(name), worth \(value), in \(container))"

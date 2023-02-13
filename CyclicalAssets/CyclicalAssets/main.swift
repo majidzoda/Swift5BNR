@@ -15,6 +15,8 @@ class Simulation {
         print("Created some assets: \([coin, gem, poem])")
         
         coin.value += 137
+        
+        vault13.remove(gem)
     }
 }
 

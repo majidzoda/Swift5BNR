@@ -26,6 +26,15 @@ class Vault {
             print("An asset has changed value by \(change). New total value: \(String(describing: self?.totalValue))")}
         assets.append(asset)
     }
+    
+    func remove(_ asset: Asset){
+        guard let index = assets.firstIndex(where: { $0 == asset}) else {
+            print("Can't find asset's index in assets")
+            return
+        }
+        assets.remove(at: index)
+        asset.container = nil
+    }
 }
 
 extension Vault: CustomStringConvertible {
