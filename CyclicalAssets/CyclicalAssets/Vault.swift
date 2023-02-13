@@ -4,8 +4,13 @@ class Vault {
     let number: Int
     private(set) var assets = [Asset]()
     
-    var totalValue: Double = 0
-    #warning("Implement totalValueas a computed property")
+    var totalValue: Double {
+        var total: Double = 0
+        assets.forEach { (each) in
+            total += each.value
+        }
+        return total
+    }
 
     init(number: Int) {
         self.number = number
