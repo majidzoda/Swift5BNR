@@ -17,3 +17,4 @@ extension Point: Equatable {
 let a  = Point(x: 3, y: 4)
 let b  = Point(x: 3, y: 4)
 let abEqual = (a == b)
+let abNotEqua = (a != b)
