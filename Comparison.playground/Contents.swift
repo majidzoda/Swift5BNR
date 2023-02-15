@@ -14,12 +14,20 @@ extension Point: Comparable, Hashable {
     }
     
     static func < (lhs: Point, rhs: Point) -> Bool {
-        return (lhs.x < rhs.x) && (lhs.y < rhs.y)
+        let distanceLhs = sqrt(pow((Double(lhs.x - 0)), 2) + (pow(Double(lhs.y - 0), 2)))
+        print("Distance lhs: \(distanceLhs)")
+        let distanceRhs =  sqrt(pow((Double(rhs.x - 0)), 2) + (pow(Double(rhs.y - 0), 2)))
+        print("Distance lhs: \(distanceRhs)\n")
+        return distanceLhs < distanceRhs
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(x)
         hasher.combine(y)
+    }
+    
+    private func distanceFromOrigin (point: Point) -> Double {
+        return sqrt(pow((Double(point.x - 0)), 2) + (pow(Double(point.y - 0), 2)))
     }
 }
 
@@ -77,3 +85,10 @@ people.append(p2)
 
 let indexP1 = people.firstIndex(of: p1)
 
+
+let e = Point(x: 3, y: 4)
+let f = Point(x: 2, y: 5)
+
+let eGreaterThanF = (e > f) // false
+let eLessThanF = (e < f)    // false
+let eEqualToF = (e == f)    // false
