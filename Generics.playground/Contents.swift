@@ -157,3 +157,19 @@ struct Restauruant {
 let restaurnat = Restauruant()
 let toast = restaurnat.makeToast()
 eat(toast)
+
+extension Stack: Equatable where Element: Equatable {}
+
+let myTasks = Stack(items: ["Clean up"])
+let yourTasks = Stack(items: ["Master Swfit"])
+myTasks == yourTasks
+
+
+class Pancake: Equatable {
+    static func == (lhs: Pancake, rhs: Pancake) -> Bool {
+        return lhs == rhs
+    }
+}
+let breakfast = Stack(items: [Pancake(), Pancake()])
+let lunch = Stack(items: [Pancake()])
+breakfast == lunch
