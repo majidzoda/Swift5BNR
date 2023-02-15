@@ -8,7 +8,7 @@ struct Point {
 
 }
 
-extension Point: Comparable {
+extension Point: Comparable, Hashable {
     static func ==(lhs: Point, rhs: Point) -> Bool {
         return (lhs.x == rhs.x) && (lhs.y == rhs.y)
     }
@@ -35,4 +35,12 @@ let cGreaterThanEqualD = (c >= d)
 let pointRange = c..<d
 pointRange.contains(a)
 pointRange.contains(Point(x: -1, y: -1))
+
+let points: Set = [a, b, c]
+points.intersection([b, c, d])
+
+let pointName: [Point : String] = [
+    Point(x: 0, y: 0) : "origin",
+    a : "a"
+]
 
