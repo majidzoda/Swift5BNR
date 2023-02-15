@@ -49,3 +49,31 @@ let pointName: [Point : String] = [
     a : "a"
 ]
 
+class Person: Hashable {
+    let name: String!
+    let age: Int!
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+    
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        lhs.name == rhs.name && lhs.age == rhs.age
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(age)
+    }
+}
+
+var people = [Person]()
+let p1 = Person(name: "OG", age: 25)
+let p2 = Person(name: "Smith", age: 30)
+
+people.append(p1)
+people.append(p2)
+
+let indexP1 = people.firstIndex(of: p1)
+
