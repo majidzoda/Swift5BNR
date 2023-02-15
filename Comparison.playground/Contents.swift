@@ -16,6 +16,11 @@ extension Point: Comparable, Hashable {
     static func < (lhs: Point, rhs: Point) -> Bool {
         return (lhs.x < rhs.x) && (lhs.y < rhs.y)
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
+    }
 }
 
 let a  = Point(x: 3, y: 4)
