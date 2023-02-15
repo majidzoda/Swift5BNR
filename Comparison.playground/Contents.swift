@@ -8,7 +8,7 @@ struct Point {
 
 }
 
-extension Point: Equatable, Comparable {
+extension Point: Comparable {
     static func ==(lhs: Point, rhs: Point) -> Bool {
         return (lhs.x == rhs.x) && (lhs.y == rhs.y)
     }
