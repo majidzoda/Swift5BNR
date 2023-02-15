@@ -21,6 +21,11 @@ extension Point: Comparable, Hashable {
         hasher.combine(x)
         hasher.combine(y)
     }
+    
+    // Bronze Challenge
+    static func +(lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
 }
 
 let a  = Point(x: 3, y: 4)
@@ -49,3 +54,5 @@ let pointName: [Point : String] = [
     a : "a"
 ]
 
+// Bronze Challenge
+let pointCplusD = c + d
