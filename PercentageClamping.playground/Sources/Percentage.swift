@@ -17,7 +17,8 @@ import Foundation
         }
         get {
 //            return storage
-            return max(min(storage, upperBound), 0)
+//            return max(min(storage, upperBound), 0)
+            return storage.clamped(to: 0...1)
         }
     }
     
@@ -25,5 +26,11 @@ import Foundation
         get {
             return storage
         }
+    }
+}
+
+extension Double {
+    func clamped(to range: ClosedRange<Double>) -> Double {
+        return max(min(self, range.upperBound), range.lowerBound)
     }
 }
