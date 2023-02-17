@@ -18,3 +18,4 @@ myCar.fuelLevel = 1.1
 print("Fuel:", myCar.fuelLevel)
 myCar.stereoVolume = 2.5
 print("Volume:", myCar.stereoVolume)
+print("Prijected volume:", myCar.$stereoVolume)
