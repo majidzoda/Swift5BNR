@@ -1,16 +1,16 @@
 import Foundation
 
-@propertyWrapper public struct Percentge {
-    private var storage: Double
-    private var upperBound: Double
+@propertyWrapper public struct Percentge<Value: BinaryFloatingPoint> {
+    private var storage: Value
+    private var upperBound: Value
     
-    public init (wrappedValue: Double, upperBound: Double = 1){
+    public init (wrappedValue: Value, upperBound: Value = 1){
 //        storage = max(min(wrappedValue, 1), 0)
         storage = wrappedValue
         self.upperBound = upperBound
     }
     
-    public var wrappedValue: Double {
+    public var wrappedValue: Value {
         set {
 //            storage = max(min(newValue, upperBound), 0)
             storage = newValue
@@ -18,19 +18,17 @@ import Foundation
         get {
 //            return storage
 //            return max(min(storage, upperBound), 0)
-            return storage.clamped(to: 0...1)
+            return clamped(to: 0...1)
         }
     }
     
-    public var projectedValue: Double {
+    private func clamped(to range: ClosedRange<Value>) -> Value {
+        return max(min(storage, range.upperBound), range.lowerBound)
+    }
+    
+    public var projectedValue: Value {
         get {
             return storage
         }
-    }
-}
-
-extension Double {
-    func clamped(to range: ClosedRange<Double>) -> Double {
-        return max(min(self, range.upperBound), range.lowerBound)
     }
 }
