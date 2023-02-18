@@ -9,14 +9,23 @@ struct WordLasso {
         let args = CommandLine.arguments
         print("Command-line arguments: \(args)")
         
-        let template: String
         if args.count > 1 {
-            template = args[1]
+            let template = args[1]
+            findAndPrintMatches(for: template, using: wordFinder)
         } else {
-            template = ""
-            #warning("Ask the user for input interactively")
+            while true {
+                print("Enter word template: ", terminator: "")
+                let template = readLine() ?? ""
+                if template.isEmpty { return }
+                findAndPrintMatches(for: template, using: wordFinder)
+            }
+
         }
         
+
+    }
+    
+    private func findAndPrintMatches (for template: String, using wordFinder: WordFinder) {
         let matches = wordFinder.findMatches(for: template)
         print("Found \(matches.count) \(matches.count == 1 ? "match" : "matches")")
         for match in matches {
@@ -24,6 +33,8 @@ struct WordLasso {
         }
     }
 }
+
+
 
 do {
     try WordLasso().run()
