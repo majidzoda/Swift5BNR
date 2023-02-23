@@ -1,6 +1,7 @@
 import Foundation
+import ArgumentParser
 
-struct WordLasso {
+struct WordLasso: ParsableCommand {
     func run() throws {
         
         let path = "/usr/share/dict/words"
@@ -36,8 +37,4 @@ struct WordLasso {
 
 
 
-do {
-    try WordLasso().run()
-} catch {
-    fatalError("Program exited unexpectedly. \(error)")
-}
+WordLasso.main()
