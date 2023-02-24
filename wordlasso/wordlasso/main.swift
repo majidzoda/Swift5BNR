@@ -15,6 +15,10 @@ struct WordLasso: ParsableCommand {
             help: "Path to a newline-delimited word list.")
     var wordListPath: String = "/usr/share/dict/words"
     
+    @Option(name: .shortAndLong,
+            help: "Returning number of matches.")
+    var countMatch: Int?
+    
     func run() throws {
         
         let wordFinder = try WordFinder(wordListPath: wordListPath, ignoreCase: ignoreCase)
@@ -26,7 +30,7 @@ struct WordLasso: ParsableCommand {
             let template = args[1]
             findAndPrintMatches(for: template, using: wordFinder)
         } else {
-            while true
+            while true {
                 print("Enter word template: ", terminator: "")
                 let template = readLine() ?? ""
                 if template.isEmpty { return }
@@ -40,9 +44,10 @@ struct WordLasso: ParsableCommand {
     
     private func findAndPrintMatches (for template: String, using wordFinder: WordFinder) {
         let matches = wordFinder.findMatches(for: template)
-        print("Found \(matches.count) \(matches.count == 1 ? "match" : "matches")")
-        for match in matches {
-            print(match)
+        print("Found \(matches.count) \(matches.count == 1 ? "match" : "matches")\(countMatch == nil ? ":" : "; listing the first \(countMatch!):")")
+        
+        for i in stride(from: 0, to: countMatch ?? matches.count, by: 1) {
+            print(matches[i])
         }
     }
 }
